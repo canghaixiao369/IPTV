@@ -46,9 +46,3 @@ run: |
   #git pull --rebase
   git push -f
 
-  # 假设你的仓库是 public 的，并且文件在根目录下
-  TXT_FILE_LINK="https://ghcy.eu.org/https://raw.githubusercontent.com/canghaixiao369/IPTV/refs/heads/main/itvlist.txt"
-  M3U_FILE_LINK="https://ghcy.eu.org/https://raw.githubusercontent.com/canghaixiao369/IPTV/refs/heads/main/itvlist.m3u"
-
-  # 发送邮件
-  echo -e "生成的txt文件链接: $TXT_FILE_LINK\n生成的m3u文件链接: $M3U_FILE_LINK" | mail -s "文件链接" 772109739@qq.com

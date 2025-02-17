@@ -3,8 +3,9 @@ name: itvlist
 on:
   push:
   schedule:
-    - cron:  '30 23 * * *'    # 国际标准时间早上7点30
+    - cron: '30 23 * * *'
   
+    
 
 jobs:
   build:
@@ -37,21 +38,11 @@ jobs:
         #run: python ${{ github.workspace }}/qita.py
         
       - name: 提交更改
-run: |
-  git config --local user.email "772109739@qq.com"
-  git config --local user.name "canghaixiao"
-  git add .
-  git commit *.txt -m "Add generated file"
-  git commit *.m3u -m "Add generated file"
-  #git pull --rebase
-  git push -f
-
-  # 获取最新的提交哈希
-  COMMIT_HASH=$(git rev-parse HEAD)
-
-  # 假设你的仓库是 public 的，并且文件在根目录下
-  TXT_FILE_LINK="https://ghcy.eu.org/https://raw.githubusercontent.com/你的用户名/你的仓库名/$COMMIT_HASH/生成的txt文件名.txt"
-  M3U_FILE_LINK="https://ghcy.eu.org/https://raw.githubusercontent.com/你的用户名/你的仓库名/$COMMIT_HASH/生成的m3u文件名.m3u"
-
-  # 发送邮件
-  echo -e "生成的txt文件链接: $TXT_FILE_LINK\n生成的m3u文件链接: $M3U_FILE_LINK" | mail -s "文件链接" 772109739@qq.com
+        run: |
+          git config --local user.email "772109739@qq.com"
+          git config --local user.name "canghaixiao"
+          git add .
+          git commit *.txt -m "Add generated file"
+          git commit *.m3u -m "Add generated file"
+          #git pull --rebase
+          git push -f

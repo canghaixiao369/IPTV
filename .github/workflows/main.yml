@@ -1,11 +1,10 @@
 name: itvlist
 
 on:
-  schedule:
-    - cron: '0 21 * * *'
   push:
-    branches:
-      - main
+  schedule:
+    - cron:  '30 23 * * *'    # 国际标准时间早上7点30
+  
 
 jobs:
   build:

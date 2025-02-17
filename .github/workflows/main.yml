@@ -38,6 +38,7 @@ jobs:
         #run: python ${{ github.workspace }}/qita.py
         
       - name: 提交更改
+<<<<<<< HEAD
         run: |
           git config --local user.email "772109739@qq.com"
           git config --local user.name "canghaixiao"
@@ -46,3 +47,14 @@ jobs:
           git commit *.m3u -m "Add generated file"
           #git pull --rebase
           git push -f
+=======
+run: |
+  git config --local user.email "772109739@qq.com"
+  git config --local user.name "canghaixiao"
+  git add .
+  git commit *.txt -m "Add generated file"
+  git commit *.m3u -m "Add generated file"
+  #git pull --rebase
+  git push -f
+
+>>>>>>> 358add4f407828409de4c24d3bb0a189606ccf18
